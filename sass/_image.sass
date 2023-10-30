@@ -1,0 +1,75 @@
+.section
+    position: relative
+    background-color: purple
+    min-height: 100vh
+    
+    .block
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+        .promo
+            width: 512px
+            height: 282px
+            overflow: hidden
+            cursor: pointer
+            background: #000
+
+            &-image
+                width: 100%
+                transition: 0.5s
+
+            &-info
+                position: absolute
+                top: 30px
+                left: 30px
+                right: 30px
+                bottom: 30px
+                opacity: 0
+
+            .info
+                color: #fff
+                text-transform: uppercase
+                padding: 0 20px
+
+                &-title
+                    font-size: 25px
+
+                &-text
+                    color: orange
+                    padding-bottom: 3px
+                    border-bottom: 2px solid #ffffff
+
+
+.block:hover .promo-image
+    transform: rotate(-10deg) scale(1.2)
+    filter: blur(1px)
+    opacity: 0.5
+
+.promo-info:before,
+.promo-info:after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    transition: 0.5s
+
+.promo-info:before
+    border-top: 1px solid #fff
+    border-bottom: 1px solid #fff
+    transform: scale(0,1)
+
+.promo-info:after
+    border-left: 1px solid #fff
+    border-right: 1px solid #fff
+    transform: scale(1,0)
+
+.promo:hover .promo-info:before,
+.promo:hover .promo-info:after
+    transform: scale(1,1)
+
+.promo:hover .promo-info
+    opacity: 1
